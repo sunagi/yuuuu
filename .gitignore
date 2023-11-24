@@ -1,0 +1,19 @@
+# 依存関係
+/node_modules
+
+# ビルドされたファイル
+/dist
+/build
+
+# ログファイル
+npm-debug.log
+yarn-error.log
+
+# 環境設定ファイル
+.env
+
+# エディタの設定ファイル
+.idea
+*.sublime-workspace
+*.sublime-project
+.vscode

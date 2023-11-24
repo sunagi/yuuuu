@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wallet Card Generator</title>
+    <script>
+        function createWallet() {
+            var inputString = document.getElementById('inputString').value;
+
+            // バックエンドにAPIリクエストを送信
+            fetch('/generateWallet', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ text: inputString }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+                // 成功時の処理、例えば生成されたデジタルパスのリンクを表示
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        }
+    </script>
+</head>
+<body>
+    <h1>Wallet Card Generator</h1>
+    <input type="text" id="inputString" placeholder="Enter text here">
+    <button onclick="createWallet()">Create Wallet</button>
+</body>
+</html>
